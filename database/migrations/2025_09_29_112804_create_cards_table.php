@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
+            $table->string('card_number', 20)->unique();
+            $table->string('pin', 4);
+            $table->dateTime('activation_date');
+            $table->date('expiry_date');
+            $table->decimal('balance', 10, 2)->default(0);
             $table->timestamps();
         });
     }
