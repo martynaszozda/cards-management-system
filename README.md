@@ -1,61 +1,264 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 💳 Cards Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-stack CRUD application for managing payment cards with user authentication. Built with Laravel (backend API) and Vue.js (frontend).
 
-## About Laravel
+## 📋 Table of Contents
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Database Setup](#database-setup)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Project Structure](#project-structure)
+- [Screenshots](#screenshots)
+- [License](#license)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 🔐 **User Authentication** - Secure login and registration system
+- 📇 **Card Management** - Full CRUD operations (Create, Read, Update, Delete)
+- ✅ **Data Validation** - Comprehensive form validation
+- 🎨 **Modern UI** - Responsive Vue.js interface
+- 🔒 **Authorization** - Users can only manage their own cards
 
-## Learning Laravel
+## 🛠️ Tech Stack
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Backend
+- **Laravel 11.x** - PHP framework
+- **MySQL** - Database
+- **Laravel Sanctum** - API authentication
+- **PHP 8.2+**
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Frontend
+- **Vue.js 3** - JavaScript framework
+- **Vue Router** - Routing
+- **Pinia** - State management
+- **Axios** - HTTP client
+- **Vite** - Build tool
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📦 Requirements
 
-## Laravel Sponsors
+- PHP >= 8.2
+- Composer
+- Node.js >= 18.x
+- MySQL >= 8.0
+- Git
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🚀 Installation
 
-### Premium Partners
+### 1. Clone the repository
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+git clone https://github.com/martynaszozda/cards-management-system.git
+cd cards-management-system
+```
 
-## Contributing
+### 2. Install PHP dependencies
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+```
 
-## Code of Conduct
+### 3. Install Node.js dependencies
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+npm install
+```
 
-## Security Vulnerabilities
+### 4. Environment Configuration
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Copy the `.env.example` file to `.env`:
 
-## License
+```bash
+cp .env.example .env
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+### 5. Configure Database
+
+Edit `.env` file with your database credentials:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=cards_management
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+
+## 🗄️ Database Setup
+
+### Option 1: Using Laravel Migrations (Recommended)
+
+```bash
+# Run migrations
+php artisan migrate
+
+# (Optional) Seed with sample data
+php artisan db:seed
+```
+
+### Option 2: Using SQL File
+
+Import the provided SQL file
+
+## 🎮 Usage
+
+### 1. Start the Laravel development server
+
+```bash
+php artisan serve
+```
+
+The API will be available at: `http://localhost:8000`
+
+### 2. Start the Vite development server
+
+In a new terminal:
+
+```bash
+npm run dev
+```
+
+The frontend will be available at: `http://localhost:5173`
+
+### 3. Default Test User
+
+```
+Email: test@example.com
+Password: password
+```
+
+## 🔌 API Endpoints
+
+### Authentication
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/register` | Register new user |
+| POST | `/api/login` | Login user |
+| POST | `/api/logout` | Logout user |
+
+### Cards (Requires Authentication)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/cards` | Get all cards (paginated) |
+| POST | `/api/cards` | Create new card |
+| GET | `/api/cards/{id}` | Get single card |
+| PUT/PATCH | `/api/cards/{id}` | Update card |
+| DELETE | `/api/cards/{id}` | Delete card |
+
+### Example Request
+
+```bash
+# Login
+curl -X POST http://localhost:8000/api/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com","password":"password"}'
+
+# Get cards (with token)
+curl -X GET http://localhost:8000/api/cards \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE"
+```
+
+## 📁 Project Structure
+
+```
+cards-management-system/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   └── CardController.php
+│   │   └── Requests/
+│   │       ├── StoreCardRequest.php
+│   │       └── UpdateCardRequest.php
+│   ├── Models/
+│   │   ├── Card.php
+│   │   └── User.php
+│   └── Policies/
+│       └── CardPolicy.php
+├── database/
+│   ├── migrations/
+│   │   ├── 2025_09_29_112804_create_cards_table.php
+│   │   └── ...
+│   └── seeders/
+├── resources/
+│   ├── js/
+│   │   ├── components/
+│   │   │   ├── CardList.vue
+│   │   │   ├── CardForm.vue
+│   │   │   └── CardItem.vue
+│   │   ├── views/
+│   │   │   ├── Login.vue
+│   │   │   ├── Register.vue
+│   │   │   └── Dashboard.vue
+│   │   ├── stores/
+│   │   │   ├── auth.js
+│   │   │   └── cards.js
+│   │   ├── router/
+│   │   │   └── index.js
+│   │   └── app.js
+│   └── views/
+├── routes/
+│   ├── api.php
+│   └── web.php
+├── .env.example
+├── composer.json
+├── package.json
+└── README.md
+```
+
+## 🗃️ Database Schema
+
+### Cards Table
+
+| Column | Type | Description |
+|--------|------|-------------|
+| id | BIGINT | Primary key |
+| user_id | BIGINT | Foreign key to users |
+| card_number | VARCHAR(20) | 20-digit card number (unique) |
+| pin | VARCHAR(4) | 4-digit PIN |
+| activation_date | DATETIME | Card activation date and time |
+| expiry_date | DATE | Card expiration date |
+| balance | DECIMAL(10,2) | Card balance |
+| created_at | TIMESTAMP | Record creation time |
+| updated_at | TIMESTAMP | Record update time |
+
+### Validation Rules
+
+- **Card Number**: Required, exactly 20 digits, unique
+- **PIN**: Required, exactly 4 digits
+- **Activation Date**: Required, valid datetime
+- **Expiry Date**: Required, must be after activation date
+- **Balance**: Required, numeric, min: 0, max: 999,999.99
+
+## 📸 Screenshots
+
+### Login Page
+![Login](screenshots/login.png)
+
+### Cards Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Add/Edit Card
+![Form](screenshots/card-form.png)
+
+## 🧪 Testing
+
+Run PHP tests:
+
+```bash
+php artisan test
+```
+
+
+Made with ❤️ for recruitment purpose
