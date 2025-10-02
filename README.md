@@ -8,12 +8,6 @@ A full-stack CRUD application for managing payment cards with user authenticatio
 - [Tech Stack](#tech-stack)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Database Setup](#database-setup)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Project Structure](#project-structure)
-- [Screenshots](#screenshots)
-- [License](#license)
 
 ## ✨ Features
 
@@ -137,85 +131,6 @@ Email: test@example.com
 Password: password
 ```
 
-## 🔌 API Endpoints
-
-### Authentication
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/register` | Register new user |
-| POST | `/api/login` | Login user |
-| POST | `/api/logout` | Logout user |
-
-### Cards (Requires Authentication)
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/cards` | Get all cards (paginated) |
-| POST | `/api/cards` | Create new card |
-| GET | `/api/cards/{id}` | Get single card |
-| PUT/PATCH | `/api/cards/{id}` | Update card |
-| DELETE | `/api/cards/{id}` | Delete card |
-
-### Example Request
-
-```bash
-# Login
-curl -X POST http://localhost:8000/api/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"test@example.com","password":"password"}'
-
-# Get cards (with token)
-curl -X GET http://localhost:8000/api/cards \
-  -H "Authorization: Bearer YOUR_TOKEN_HERE"
-```
-
-## 📁 Project Structure
-
-```
-cards-management-system/
-├── app/
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   │   └── CardController.php
-│   │   └── Requests/
-│   │       ├── StoreCardRequest.php
-│   │       └── UpdateCardRequest.php
-│   ├── Models/
-│   │   ├── Card.php
-│   │   └── User.php
-│   └── Policies/
-│       └── CardPolicy.php
-├── database/
-│   ├── migrations/
-│   │   ├── 2025_09_29_112804_create_cards_table.php
-│   │   └── ...
-│   └── seeders/
-├── resources/
-│   ├── js/
-│   │   ├── components/
-│   │   │   ├── CardList.vue
-│   │   │   ├── CardForm.vue
-│   │   │   └── CardItem.vue
-│   │   ├── views/
-│   │   │   ├── Login.vue
-│   │   │   ├── Register.vue
-│   │   │   └── Dashboard.vue
-│   │   ├── stores/
-│   │   │   ├── auth.js
-│   │   │   └── cards.js
-│   │   ├── router/
-│   │   │   └── index.js
-│   │   └── app.js
-│   └── views/
-├── routes/
-│   ├── api.php
-│   └── web.php
-├── .env.example
-├── composer.json
-├── package.json
-└── README.md
-```
 
 ## 🗃️ Database Schema
 
@@ -240,17 +155,6 @@ cards-management-system/
 - **Activation Date**: Required, valid datetime
 - **Expiry Date**: Required, must be after activation date
 - **Balance**: Required, numeric, min: 0, max: 999,999.99
-
-## 📸 Screenshots
-
-### Login Page
-![Login](screenshots/login.png)
-
-### Cards Dashboard
-![Dashboard](screenshots/dashboard.png)
-
-### Add/Edit Card
-![Form](screenshots/card-form.png)
 
 ## 🧪 Testing
 
