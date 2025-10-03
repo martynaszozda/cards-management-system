@@ -8,6 +8,8 @@ A full-stack CRUD application for managing payment cards with user authenticatio
 - [Tech Stack](#tech-stack)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Screenshots](#screenshots)
+
 
 ## ✨ Features
 
@@ -163,6 +165,12 @@ Run PHP tests:
 ```bash
 php artisan test
 ```
+##Screenshots
+<img width="1396" height="719" alt="Zrzut ekranu 2025-10-3 o 19 49 08" src="https://github.com/user-attachments/assets/1f15f561-441c-4f84-8caf-c04bfb7d4e92" />
+<img width="1396" height="719" alt="Zrzut ekranu 2025-10-3 o 19 49 01" src="https://github.com/user-attachments/assets/4aacd472-7a9e-482a-bc2c-7be60dd0062b" />
+<img width="1396" height="719" alt="Zrzut ekranu 2025-10-3 o 19 48 54" src="https://github.com/user-attachments/assets/734920ff-24dc-4925-a27a-84d0959dafd7" />
+<img width="1396" height="616" alt="Zrzut ekranu 2025-10-3 o 19 48 43" src="https://github.com/user-attachments/assets/2ba79c9b-5088-491f-9e6f-7566f4a8bf7a" />
+<img width="1396" height="616" alt="Zrzut ekranu 2025-10-3 o 19 48 07 2" src="https://github.com/user-attachments/assets/5513227f-5deb-4009-a767-260ade9267b6" />
 
 
 Made with ❤️ for recruitment purpose
